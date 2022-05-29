@@ -1,0 +1,328 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Resourses/Fonts/kfn_40_o1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/MainScenes/NewGameIntro.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Art/Intro_Grey.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Audio/MusicBox-Shuinvy.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/TextBox.png" type="Texture" id=8]
+[ext_resource path="res://Resourses/Fonts/kp_45.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/Audio/Interstellarhero_Littlerobotsoundfactory.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Smile.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking_EC.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Thinking.png" type="Texture" id=14]
+
+[sub_resource type="Animation" id=2]
+resource_name = "BossAppear"
+length = 240.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flash:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 13, 13.5, 14.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Name:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 12.9, 13, 13.5, 14.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Boss_Idle:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 14, 14.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Boss_Thinking:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 43.8, 44, 48, 48.3, 98.8, 99, 108.8, 109 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Boss_SmileTalk:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 22.8, 23, 27.8, 28, 53.8, 54, 66, 66.3, 124.8, 125 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Boss_Talking:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 15.8, 16, 18.5, 18.7, 28.8, 29, 35.8, 36, 71.8, 72, 78, 78.3, 78.6, 98.8, 99, 108.8, 109, 124.8, 125 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flash:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Name:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Boss_Idle:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Boss_Thinking:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Boss_SmileTalk:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Boss_Talking:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+outline_color = Color( 0.592157, 0.592157, 0.592157, 1 )
+font_data = ExtResource( 5 )
+
+[node name="NewGameIntro" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+anims/BossAppear = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Boss_Idle" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 360.0
+margin_right = 2608.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_Thinking" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 360.0
+margin_right = 2608.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_SmileTalk" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 360.0
+margin_right = 2608.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_Talking" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 360.0
+margin_right = 2608.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -180.0
+margin_right = 640.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1, 0.6 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flash" type="ColorRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 225.0
+margin_top = 555.0
+margin_right = 1225.0
+margin_bottom = 705.0
+rect_min_size = Vector2( 1000, 150 )
+custom_fonts/font = ExtResource( 9 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 5.0
+margin_top = 550.0
+margin_right = 205.0
+margin_bottom = 595.0
+rect_min_size = Vector2( 200, 45 )
+custom_fonts/font = ExtResource( 1 )
+text = " ? :"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1005.0
+margin_top = 675.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Skip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "S k i p  story"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="next_message" type="Timer" parent="."]
+
+[node name="MusicBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
+
+[connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]

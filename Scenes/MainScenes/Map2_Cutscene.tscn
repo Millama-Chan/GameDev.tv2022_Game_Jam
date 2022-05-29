@@ -1,0 +1,213 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/UI/Art/Intro_Grey.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/TextBox.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Audio/Interstellarhero_Littlerobotsoundfactory.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Smile.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=7]
+[ext_resource path="res://Resourses/Fonts/kp_45.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scenes/MainScenes/Map2_Cutscene.gd" type="Script" id=9]
+[ext_resource path="res://Resourses/Fonts/kfn_40_o1.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Thinking.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Map_2_Cutscene"
+length = 105.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Boss_Talk:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 3, 6.8, 7, 19.3, 19.5, 39, 39.2, 41.8, 42, 51.8, 52, 54, 54.5, 59.8, 60, 62, 62.3, 98, 98.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Boss_Think:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 24.8, 25, 39, 39.2, 67.8, 68, 74.8, 75, 78.8, 79, 98, 98.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Boss_Talk:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Boss_Think:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+outline_color = Color( 0.592157, 0.592157, 0.592157, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Map2_Cutscene" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_Idle" type="TextureRect" parent="Background"]
+margin_left = 250.0
+margin_right = 2498.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_Talk" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 250.0
+margin_right = 2498.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_Think" type="TextureRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 250.0
+margin_right = 2498.0
+margin_bottom = 3001.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -180.0
+margin_right = 640.0
+margin_bottom = 120.0
+rect_scale = Vector2( 1, 0.6 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flash" type="ColorRect" parent="Background"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animations" type="AnimationPlayer" parent="Background"]
+anims/Map_2_Cutscene = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 225.0
+margin_top = 550.0
+margin_right = 1249.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 1000, 150 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 8 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 550.0
+margin_right = 205.0
+margin_bottom = 595.0
+custom_fonts/font = ExtResource( 10 )
+text = "Hazel:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1005.0
+margin_top = 675.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Skip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "S k i p  story"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="next_message" type="Timer" parent="."]
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+
+[connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]

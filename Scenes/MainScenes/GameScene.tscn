@@ -1,0 +1,253 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Maps/Map1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Icons/Icon_Frost.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Icons/Icon_LilDemon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Icons/Icon_FireArrows.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/MainScenes/GameScene.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/MainScenes/UI.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Icons/pause.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Icons/right.png" type="Texture" id=8]
+[ext_resource path="res://Resourses/Fonts/kfn_30.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Resourses/Fonts/kfn_50_o1.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/UI/LifeBar.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Icons/Icon_Eyes.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Icons/Icon_LavaCanon.png" type="Texture" id=13]
+[ext_resource path="res://Resourses/Fonts/kfn_40_o2_yellow.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Assets/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scenes/Maps/Map2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Audio/electro-groovy_orangefreesounds.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Audio/Retro_Orangefreesounds.wav" type="AudioStream" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Map2" parent="." instance=ExtResource( 16 )]
+visible = false
+
+[node name="Map1" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="HUD" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrenzyWarning" type="ColorRect" parent="UI/HUD"]
+visible = false
+margin_left = 275.0
+margin_top = 615.0
+margin_right = 975.0
+margin_bottom = 715.0
+rect_min_size = Vector2( 700, 100 )
+color = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="UI/HUD/FrenzyWarning"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "Oh no, A soul outbreak!
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/HUD/FrenzyWarning"]
+margin_top = 50.0
+margin_right = 700.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Survive the frenzy for 30 seconds!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoBar" type="ColorRect" parent="UI/HUD"]
+self_modulate = Color( 0.0509804, 0.0392157, 0.0196078, 0.901961 )
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildBar" type="HBoxContainer" parent="UI/HUD/InfoBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 400, 100 )
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="HBoxContainer" parent="UI/HUD/InfoBar/BuildBar"]
+margin_right = 196.0
+margin_bottom = 100.0
+
+[node name="Symbol" type="Label" parent="UI/HUD/InfoBar/BuildBar/Money"]
+margin_right = 80.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 80, 100 )
+custom_fonts/font = ExtResource( 10 )
+text = "SP"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/HUD/InfoBar/BuildBar/Money"]
+margin_left = 84.0
+margin_right = 189.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 105, 100 )
+custom_fonts/font = ExtResource( 9 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/HUD/InfoBar/BuildBar/Money"]
+margin_left = 193.0
+margin_right = 196.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 3, 0 )
+color = Color( 0.372549, 0.356863, 0.337255, 1 )
+
+[node name="LilDemon" type="TextureButton" parent="UI/HUD/InfoBar/BuildBar" groups=["build_buttons"]]
+margin_left = 221.0
+margin_top = 10.0
+margin_right = 301.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="FireArrows" type="TextureButton" parent="UI/HUD/InfoBar/BuildBar" groups=["build_buttons"]]
+margin_left = 326.0
+margin_top = 10.0
+margin_right = 406.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="LavaCanon" type="TextureButton" parent="UI/HUD/InfoBar/BuildBar" groups=["build_buttons"]]
+margin_left = 431.0
+margin_top = 10.0
+margin_right = 511.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 13 )
+expand = true
+
+[node name="Frost" type="TextureButton" parent="UI/HUD/InfoBar/BuildBar" groups=["build_buttons"]]
+margin_left = 536.0
+margin_top = 10.0
+margin_right = 616.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Eyes" type="TextureButton" parent="UI/HUD/InfoBar/BuildBar" groups=["build_buttons"]]
+margin_left = 641.0
+margin_top = 10.0
+margin_right = 721.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 12 )
+expand = true
+
+[node name="HP" type="TextureProgress" parent="UI/HUD/InfoBar/BuildBar"]
+margin_left = 955.0
+margin_top = 25.0
+margin_right = 1255.0
+margin_bottom = 75.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 11 )
+tint_under = Color( 0.117647, 0.105882, 0.105882, 1 )
+tint_progress = Color( 0.429827, 1, 0.428711, 1 )
+
+[node name="Tween" type="Tween" parent="UI/HUD/InfoBar/BuildBar/HP"]
+
+[node name="Control" type="Control" parent="UI/HUD/InfoBar/BuildBar"]
+margin_left = 1280.0
+margin_right = 1280.0
+margin_bottom = 100.0
+
+[node name="GameControls" type="HBoxContainer" parent="UI/HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -90.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePlay" type="TextureButton" parent="UI/HUD/GameControls"]
+pause_mode = 2
+margin_right = 70.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="30Seconds" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -10.0
+
+[node name="FrenzyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -18.0
+
+[connection signal="pressed" from="UI/HUD/GameControls/PausePlay" to="UI" method="_on_PausePlay_pressed"]
+[connection signal="timeout" from="30Seconds" to="." method="_on_30Seconds_timeout"]

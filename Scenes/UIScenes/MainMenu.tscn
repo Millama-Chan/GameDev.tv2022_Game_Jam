@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/UI/Art/Background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=3]
+[ext_resource path="res://Resourses/Fonts/kfn_40_o1.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/UIScenes/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Resourses/Fonts/kfn_25.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/UI/Art/ExtraBackground.png" type="Texture" id=7]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B2" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sorry" type="Label" parent="B2"]
+margin_left = 734.0
+margin_top = 48.0
+margin_right = 1239.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 1, 0.992157, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Sorry for the inconvenience,
+Proceed to level 2 clicking below!"
+align = 1
+valign = 1
+
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="M"]
+margin_left = 730.0
+margin_top = 50.0
+margin_right = 1230.0
+margin_bottom = 670.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 8
+custom_constants/separation = 35
+alignment = 1
+
+[node name="NewGame" type="TextureButton" parent="M/VB"]
+margin_left = 75.0
+margin_top = 72.0
+margin_right = 425.0
+margin_bottom = 147.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="NewLabel" type="Label" parent="M/VB/NewGame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "New Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlay" type="TextureButton" parent="M/VB"]
+margin_left = 75.0
+margin_top = 182.0
+margin_right = 425.0
+margin_bottom = 257.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/HowToPlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "How to play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureButton" parent="M/VB"]
+margin_left = 75.0
+margin_top = 292.0
+margin_right = 425.0
+margin_bottom = 367.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="M/VB"]
+margin_top = 402.0
+margin_right = 500.0
+margin_bottom = 437.0
+rect_min_size = Vector2( 0, 35 )
+
+[node name="Quit" type="TextureButton" parent="M/VB"]
+margin_left = 75.0
+margin_top = 472.0
+margin_right = 425.0
+margin_bottom = 547.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="M/VB/Quit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

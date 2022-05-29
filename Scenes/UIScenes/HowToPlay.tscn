@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resourses/Fonts/kfn_30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Icons/home.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Art/MonsterUI.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Art/Controls_UI_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Art/Controls_UI.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/UIScenes/HowToPlay.gd" type="Script" id=9]
+
+[node name="HowToPlay" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.0588235, 0.0470588, 0.0235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Monsters" type="TextureRect" parent="ColorRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -325.0
+margin_right = 500.0
+margin_bottom = 325.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameControls" type="TextureRect" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -325.0
+margin_right = 500.0
+margin_bottom = 325.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameControls2" type="TextureRect" parent="ColorRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -325.0
+margin_right = 500.0
+margin_bottom = 325.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="TextureButton" parent="ColorRect"]
+margin_left = 225.0
+margin_top = 70.0
+margin_right = 415.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Controls"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Controls"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Build" type="TextureButton" parent="ColorRect"]
+margin_left = 435.0
+margin_top = 70.0
+margin_right = 660.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Build"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Build Rules"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonsterGuide" type="TextureButton" parent="ColorRect"]
+margin_left = 680.0
+margin_top = 70.0
+margin_right = 980.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/MonsterGuide"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Souls Guide"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="ColorRect"]
+margin_left = 1000.0
+margin_top = 70.0
+margin_right = 1050.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Back"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ColorRect/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="ColorRect/Build" to="." method="_on_Build_pressed"]
+[connection signal="pressed" from="ColorRect/MonsterGuide" to="." method="_on_MonsterGuide_pressed"]
+[connection signal="pressed" from="ColorRect/Back" to="." method="_on_Back_pressed"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Resourses/Fonts/kp_45.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Art/Intro_Grey.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Audio/MusicBox-Shuinvy.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/MainScenes/GameCompleted.gd" type="Script" id=5]
+[ext_resource path="res://Assets/UI/CharacterArt/Friend_M1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/CharacterArt/Friend_F1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking_EC.png" type="Texture" id=8]
+
+[node name="GameCompleted" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss_SmileTalk" type="TextureRect" parent="Background"]
+visible = false
+margin_left = 360.0
+margin_top = 90.0
+margin_right = 2608.0
+margin_bottom = 3091.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Friend_F1" type="TextureRect" parent="Background"]
+visible = false
+margin_left = 210.0
+margin_top = 115.0
+margin_right = 2458.0
+margin_bottom = 3116.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Friend_M1" type="TextureRect" parent="Background"]
+visible = false
+margin_left = 600.0
+margin_top = 100.0
+margin_right = 2848.0
+margin_bottom = 3101.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -178.0
+margin_right = 640.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 90.0
+margin_top = 555.0
+margin_right = 1190.0
+margin_bottom = 705.0
+rect_min_size = Vector2( 1000, 150 )
+custom_fonts/font = ExtResource( 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="next_message" type="Timer" parent="."]
+
+[node name="MusicBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]
