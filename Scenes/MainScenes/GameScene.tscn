@@ -16,8 +16,8 @@
 [ext_resource path="res://Resourses/Fonts/kfn_40_o2_yellow.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Assets/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Scenes/Maps/Map2.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/Audio/electro-groovy_orangefreesounds.wav" type="AudioStream" id=17]
-[ext_resource path="res://Assets/Audio/Retro_Orangefreesounds.wav" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio/GamePlayMusic.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Audio/PuzzleLoop.wav" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30

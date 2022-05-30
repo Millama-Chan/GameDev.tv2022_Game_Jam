@@ -3,13 +3,13 @@
 [ext_resource path="res://Resourses/Fonts/kfn_40_o1.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/MainScenes/NewGameIntro.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Art/Intro_Grey.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Audio/MusicBox-Shuinvy.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/MusicBox.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/TextBox.png" type="Texture" id=8]
 [ext_resource path="res://Resourses/Fonts/kp_45.tres" type="DynamicFont" id=9]
-[ext_resource path="res://Assets/Audio/Interstellarhero_Littlerobotsoundfactory.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Fren.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/UI/CharacterArt/Boss_Smile.png" type="Texture" id=11]
 [ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/CharacterArt/Boss_Talking_EC.png" type="Texture" id=13]
@@ -321,7 +321,7 @@ volume_db = -10.0
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -5.0
+volume_db = -3.0
 
 [connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]
 [connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]

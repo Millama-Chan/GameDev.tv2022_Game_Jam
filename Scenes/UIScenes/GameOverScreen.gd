@@ -65,6 +65,8 @@ func _on_next_char_timeout():
 		$Label.modulate =  Color(0, 1, 0)
 		$Name.modulate  =  Color(0, 1, 0)
 		get_node("Name").text = "Player:"
+	elif warnings[current_message] == "I'll see you on your next death":
+		get_node("Skip").visible = false
 
 	if (current_char < len(warnings[current_message])):
 		var next_char = warnings[current_message][current_char]
@@ -86,3 +88,7 @@ func _on_next_message_timeout():
 		display = ""
 		current_char = 0
 		$next_char.start()
+
+
+func _on_Skip_pressed():
+	stop_dialogue()

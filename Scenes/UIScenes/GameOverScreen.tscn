@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resourses/Fonts/kp_45.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Audio/sad-song_norameld.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/SadGameOver.wav" type="AudioStream" id=2]
 [ext_resource path="res://Resourses/Fonts/kfn_40_o1.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/UIScenes/GameOverScreen.gd" type="Script" id=4]
 [ext_resource path="res://Assets/UI/CharacterArt/Boss_Thinking.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/CharacterArt/Boss_Dissapointed.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/CharacterArt/Friend_M1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/CharacterArt/Friend_F1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button01.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button04.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "GameOver"
@@ -124,6 +127,11 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
 [node name="GameOverScreen" type="CanvasLayer"]
 script = ExtResource( 4 )
 
@@ -235,13 +243,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Skip" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -45.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Skip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Skip"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Skip"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="next_char" type="Timer" parent="."]
 
 [node name="next_message" type="Timer" parent="."]
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -5.0
+volume_db = -15.0
 
+[connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]
 [connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
 [connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]

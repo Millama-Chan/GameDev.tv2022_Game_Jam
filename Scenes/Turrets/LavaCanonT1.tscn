@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Effects/shotRed.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Towers/LavaCanon_Top.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Turrets/TurretsConnector.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Audio/aesterial-arts__arcade-shoot.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/LittleShot.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0

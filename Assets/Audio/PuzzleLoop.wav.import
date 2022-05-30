@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PuzzleLoop.wav-babc916234b5a1fa350276cd1e08a745.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/PuzzleLoop.wav"
+dest_files=[ "res://.import/PuzzleLoop.wav-babc916234b5a1fa350276cd1e08a745.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
